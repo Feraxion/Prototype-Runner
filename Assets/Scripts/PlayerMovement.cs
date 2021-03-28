@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //RigidBody Eklentisinden sonra burası rigidbody olarak değişecek
         transform.position += Vector3.forward * movementSpeed * Time.fixedDeltaTime;
         if (isTouching)
         {
