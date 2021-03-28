@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    Rigidbody m_Rigidbody;
     [SerializeField] float movementSpeed;
     [SerializeField] float controlSpeed;
 
@@ -21,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         //RigidBody Eklentisinden sonra burası rigidbody olarak değişecek
+        //transform.position += m_Rigidbody.AddForce(transform.forward * movementSpeed);
         transform.position += Vector3.forward * movementSpeed * Time.fixedDeltaTime;
         if (isTouching)
         {
