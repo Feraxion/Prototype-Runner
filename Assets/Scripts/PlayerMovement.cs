@@ -13,6 +13,10 @@ public class PlayerMovement : MonoBehaviour
     float touchPosX;
     Vector3 direction;
 
+    private void Start()
+    {
+        m_Rigidbody = GetComponent<Rigidbody>();
+    }
 
     private void Update()
     {
@@ -22,8 +26,9 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         //RigidBody Eklentisinden sonra burası rigidbody olarak değişecek
+        m_Rigidbody.AddForce(transform.forward * movementSpeed);
         //transform.position += m_Rigidbody.AddForce(transform.forward * movementSpeed);
-        transform.position += Vector3.forward * movementSpeed * Time.fixedDeltaTime;
+       // transform.position += Vector3.forward * movementSpeed * Time.fixedDeltaTime;
         if (isTouching)
         {
             touchPosX += Input.GetAxis("Mouse X") * controlSpeed * Time.fixedDeltaTime;
