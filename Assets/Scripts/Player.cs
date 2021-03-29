@@ -25,9 +25,11 @@ public class Player : MonoBehaviour
     {
         //close character components
         gameObject.GetComponent<BoxCollider>().enabled = false;
-        gameObject.GetComponent<MeshRenderer>().enabled = false;
+        gameObject.GetComponent<SphereCollider>().enabled = true;
+        gameObject.GetComponent<MeshFilter>().mesh = changedSphere.GetComponent<MeshFilter>().mesh;
+        
         //open sphere components
-        changedSphere.gameObject.GetComponent<MeshRenderer>().enabled = true;
-        changedSphere.gameObject.GetComponent<SphereCollider>().enabled = true;
+        //changedSphere.gameObject.GetComponent<MeshRenderer>().enabled = true;
+       // changedSphere.gameObject.GetComponent<SphereCollider>().enabled = true;
     }
 }
