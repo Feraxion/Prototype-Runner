@@ -28,7 +28,6 @@ public class Player : MonoBehaviour
         Debug.Log("değişti");
         changedSphere.gameObject.GetComponent<MeshRenderer>().enabled = true;
         changedSphere.gameObject.GetComponent<SphereCollider>().enabled = true;
-        changedSphere.gameObject.GetComponent<SphereCollider>().isTrigger = true;
         Debug.Log("2. kez değişti");
     }
 }
