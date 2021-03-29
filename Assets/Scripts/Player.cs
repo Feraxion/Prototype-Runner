@@ -18,16 +18,16 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "Finish")
         {
             MakeSphere();
-            Debug.Log("Tag değişti");
+            Debug.Log("Chracter changed");
         }
     }
     void MakeSphere()
     {
+        //close character components
         gameObject.GetComponent<BoxCollider>().enabled = false;
         gameObject.GetComponent<MeshRenderer>().enabled = false;
-        Debug.Log("değişti");
+        //open sphere components
         changedSphere.gameObject.GetComponent<MeshRenderer>().enabled = true;
         changedSphere.gameObject.GetComponent<SphereCollider>().enabled = true;
-        Debug.Log("2. kez değişti");
     }
 }
