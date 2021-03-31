@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Obstacle
   - Right
+  - Pixel
   layers:
   - Default
   - TransparentFX

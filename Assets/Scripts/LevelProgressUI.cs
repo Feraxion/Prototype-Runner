@@ -7,8 +7,9 @@ public class LevelProgressUI : MonoBehaviour
 {
     [Header("UI references :")]
     [SerializeField] private Image uiFillImage;
-    [SerializeField] private Text uiCurrentLevel;
-    [SerializeField] private Text uiNextLevel;
+    [SerializeField] private Text currentLevelText;
+    [SerializeField] private Text nextLevelText;
+    public static int currentLevelIndex; // get index to UI variable
 
     [Header("Player & Finish Line references :")]
     [SerializeField] private Transform playerTransform;
@@ -17,13 +18,17 @@ public class LevelProgressUI : MonoBehaviour
     private Vector3 finishLinePosition; // get finish position
 
     private float fullDistance; // get game progress
-    
+
+    void Awake()
+    {
+        currentLevelIndex = PlayerPrefs.GetInt("CurrentLevelIndex", 1); // Get current level data
+    }
     void Start()
     {
         finishLinePosition = finishLineTransform.position;
         fullDistance = GetDistance();
     }
-    
+
     void Update()
     {
         if (playerTransform == null)
@@ -36,22 +41,25 @@ public class LevelProgressUI : MonoBehaviour
             float progressValue = Mathf.InverseLerp(fullDistance, 0f, newDistance);
             UpdateProgressFill(progressValue);
         }
+
+        // Update our UI
+        SetLevelTexts();
     }
-    
+
     private void UpdateProgressFill(float value)
     {
         uiFillImage.fillAmount = value;
     }
-    
-    private float GetDistance()
+
+    private float GetDistance() //getting full distance
     {
-        return Vector3.Distance(playerTransform.position, finishLinePosition);  //getting full distance
+        return Vector3.Distance(playerTransform.position, finishLinePosition);  
         // return (finishLinePosition - playerTransform.position).sqrMagnitude; // more performance able // cuz of sqrMagnitude not true for finish progress
     }
-    
-    public void SetLevelTexts(int level)  // setting level text
+
+    public void SetLevelTexts()  // UI Level texts adjusting
     {
-        uiCurrentLevel.text = level.ToString();
-        uiNextLevel.text = (level + 1).ToString();
+        currentLevelText.text = currentLevelIndex.ToString();
+        nextLevelText.text = (currentLevelIndex + 1).ToString();
     }
 }

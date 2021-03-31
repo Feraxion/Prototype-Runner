@@ -13,18 +13,43 @@ public class Player : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider col)
     {
-        if (other.gameObject.tag == "Finish")
+        if (col.gameObject.tag == "Finish")
         {
             MakeSphere();
             Debug.Log("Chracter changed");
+        }
+        
+        // when player get pixels our character will scale
+        if(col.gameObject.tag == "Pixel")
+        {
+            gameObject.transform.localScale += Vector3.one * 0.2f;
+            Destroy(col.gameObject);
+        }
+        
+        if (col.gameObject.tag == "Obstacle")
+        {
+
+            if (col.transform.localScale.x > gameObject.transform.localScale.x)
+            {
+                Destroy(gameObject);
+                // Add gameover screen
+            }
+            else
+            {
+                gameObject.transform.localScale /= 1.5f;
+                Destroy(col.gameObject);
+                //MAYBE ADD SOME SHATTERED VERSIONS
+            }
+            
+
         }
     }
     void MakeSphere()
     {
         //close character components
-        gameObject.GetComponent<BoxCollider>().enabled = false;
+        gameObject.GetComponent<CapsuleCollider>().enabled = false;
         gameObject.GetComponent<SphereCollider>().enabled = true;
         gameObject.GetComponent<MeshFilter>().mesh = changedSphere.GetComponent<MeshFilter>().mesh;
         
