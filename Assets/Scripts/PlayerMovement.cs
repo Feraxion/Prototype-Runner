@@ -29,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
         //m_Rigidbody.AddForce(transform.forward * movementSpeed);
         //transform.position += m_Rigidbody.AddForce(transform.forward * movementSpeed);
         transform.position += Vector3.forward * movementSpeed * Time.fixedDeltaTime;
+        //m_Rigidbody.AddForce(Vector3.forward * movementSpeed * Time.fixedDeltaTime);
+        
         if (isTouching)
         {
             touchPosX += Input.GetAxis("Mouse X") * controlSpeed * Time.fixedDeltaTime;

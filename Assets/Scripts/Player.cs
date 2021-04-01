@@ -4,12 +4,23 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    
     public GameObject changedSphere; // after finishLine our character will be sphere
+    public GameObject playerMesh;
+    public bool isSphere;
+    
     private void Start()
     {
     }
     private void Update()
     {
+
+        
+        //Rotates the sphere 
+        if (isSphere)
+        {
+            changedSphere.transform.Rotate(3,0,0);
+        }
 
     }
 
@@ -21,7 +32,7 @@ public class Player : MonoBehaviour
             Debug.Log("Chracter changed");
         }
         
-        // when player get pixels our character will scale
+        // when player gets pixels our character will scale
         if(col.gameObject.tag == "Pixel")
         {
             gameObject.transform.localScale += Vector3.one * 0.2f;
@@ -46,13 +57,14 @@ public class Player : MonoBehaviour
     }
     void MakeSphere()
     {
-        //close character components
+        //Disables the body mesh and collider
+        playerMesh.GetComponent<SkinnedMeshRenderer>().enabled = false;
         gameObject.GetComponent<CapsuleCollider>().enabled = false;
-        gameObject.GetComponent<SphereCollider>().enabled = true;
-        gameObject.GetComponent<MeshFilter>().mesh = changedSphere.GetComponent<MeshFilter>().mesh;
         
-        //open sphere components
-        //changedSphere.gameObject.GetComponent<MeshRenderer>().enabled = true;
-       // changedSphere.gameObject.GetComponent<SphereCollider>().enabled = true;
+        //Activates the sphere mesh and collider
+        changedSphere.GetComponent<SphereCollider>().enabled = true;
+        changedSphere.GetComponent<MeshRenderer>().enabled = true;
+        isSphere = true;
+
     }
 }
