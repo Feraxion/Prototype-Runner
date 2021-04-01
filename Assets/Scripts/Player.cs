@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public GameObject changedSphere;
+    public GameObject changedSphere; // after finishLine our character will be sphere
     private void Start()
     {
     }
@@ -41,9 +41,7 @@ public class Player : MonoBehaviour
                 gameObject.transform.localScale /= 1.5f;
                 Destroy(col.gameObject);
                 //MAYBE ADD SOME SHATTERED VERSIONS
-            }
-            
-
+            }            
         }
     }
     void MakeSphere()
