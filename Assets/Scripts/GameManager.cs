@@ -23,6 +23,6 @@ public class GameManager : MonoBehaviour
     public void IncerementDiamond()
     {
         diamondCount++;
-        diamondText.text = "Score: " + diamondCount; // change with image later
+        diamondText.text = "Diamond: " + diamondCount; // change with image later
     }
 }
