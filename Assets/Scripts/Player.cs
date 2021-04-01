@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
         if (col.gameObject.tag == "Finish")
         {
             MakeSphere();
-            Debug.Log("Chracter changed");
+            Debug.Log("Character changed");
         }
         
         // when player gets pixels our character will scale
