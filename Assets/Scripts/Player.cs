@@ -31,8 +31,6 @@ public class Player : MonoBehaviour
             MakeSphere();
             Debug.Log("Character changed");
             //GameManager.inst.playerState = GameManager.PlayerState.Finish;
-
-
         }
         
         // when player gets pixels our character will scale
