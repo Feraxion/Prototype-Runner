@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public Text diamondText;
     public GameObject StartScreen;
     public GameObject FinishScreen;
+    public GameObject GameOverScreen;
 
 
     public static GameManager inst;
@@ -44,6 +45,11 @@ public class GameManager : MonoBehaviour
             //Oyun bitisini cagiriyor
             StartCoroutine(WaitAfterSeconds(3, FinishScreen));
         }
+
+        if (playerState == PlayerState.Died)
+        {
+            GameOverScreen.SetActive(true);
+        }
     }
     public void IncerementDiamond()
     {
@@ -57,12 +63,7 @@ public class GameManager : MonoBehaviour
         obj.SetActive(true);
     }
 
-    //OnClick Button
-    public void StartGame()
-    {
-        playerState = PlayerState.Playing;
-        StartScreen.SetActive(false);
-    }
+   
     
     
 }

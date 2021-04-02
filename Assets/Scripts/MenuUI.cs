@@ -10,6 +10,13 @@ public class MenuUI : MonoBehaviour
     {
         GameSceneManager.Load(GameSceneManager.Scene.Level1);
     }
+    
+    //OnClick Button
+    public void StartGame()
+    {
+        GameManager.inst.playerState = GameManager.PlayerState.Playing;
+        GameManager.inst.StartScreen.SetActive(false);
+    }
 
     public void SkipLevel()
     {

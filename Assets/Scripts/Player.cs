@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public GameObject changedSphere; // after finishLine our character will be sphere
     public GameObject playerMesh;
     public bool isSphere;
-    
+
     private void Start()
     {
     }
@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
         //Rotates the sphere 
         if (isSphere)
         {
-            changedSphere.transform.Rotate(3,0,0);
+            changedSphere.transform.Rotate(4,0,0);
         }
 
     }
@@ -30,6 +30,9 @@ public class Player : MonoBehaviour
         {
             MakeSphere();
             Debug.Log("Character changed");
+            //GameManager.inst.playerState = GameManager.PlayerState.Finish;
+
+
         }
         
         // when player gets pixels our character will scale
@@ -45,6 +48,8 @@ public class Player : MonoBehaviour
             if (col.transform.localScale.x > gameObject.transform.localScale.x)
             {
                 Destroy(gameObject);
+                GameManager.inst.playerState = GameManager.PlayerState.Died;
+
                 // Add gameover screen
             }
             else
