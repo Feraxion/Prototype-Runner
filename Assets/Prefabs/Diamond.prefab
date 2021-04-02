@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8376835578482148294}
   - component: {fileID: 5099078276752855272}
   - component: {fileID: 4650122076015407296}
+  - component: {fileID: -2419371967390325841}
   m_Layer: 0
   m_Name: Diamond
   m_TagString: Diamond
@@ -107,3 +108,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnSpeed: 90
+--- !u!114 &-2419371967390325841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3784144571319915069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82e278339df9a4b489b6f49ca539f4ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yMin: 1
+  yMax: 1.5
+  animSpeed: 0.1
+  moveDown: 0
+  moveUp: 0

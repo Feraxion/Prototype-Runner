@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
     [Header("Diamond Stats")]
     [SerializeField] public int diamondCount;
-    [SerializeField] public Text diamondText;
+    [SerializeField] public TextMeshProUGUI diamondText;
     public GameObject StartScreen;
     public GameObject FinishScreen;
     public GameObject GameOverScreen;
@@ -54,7 +55,7 @@ public class GameManager : MonoBehaviour
     public void IncerementDiamond()
     {
         diamondCount++;
-        diamondText.text = "Diamond: " + diamondCount; // change with image later
+        diamondText.text = "" + diamondCount;
     }
     
     IEnumerator WaitAfterSeconds(int seconds, GameObject obj)

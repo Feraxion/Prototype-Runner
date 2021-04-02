@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,8 +8,8 @@ public class LevelProgressUI : MonoBehaviour
 {
     [Header("UI references :")]
     [SerializeField] private Image uiFillImage;
-    [SerializeField] private Text currentLevelText;
-    [SerializeField] private Text nextLevelText;
+    [SerializeField] private TextMeshProUGUI currentLevelText;
+    [SerializeField] private TextMeshProUGUI nextLevelText;
     public static int currentLevelIndex; // get index to UI variable
 
     [Header("Player & Finish Line references :")]
