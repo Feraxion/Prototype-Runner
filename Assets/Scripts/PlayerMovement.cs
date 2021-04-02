@@ -44,7 +44,8 @@ public class PlayerMovement : MonoBehaviour
             //RigidBody Eklentisinden sonra burası rigidbody olarak değişecek
             //m_Rigidbody.AddForce(transform.forward * movementSpeed);
             //transform.position += m_Rigidbody.AddForce(transform.forward * movementSpeed);
-            transform.position += Vector3.forward * movementSpeed * Time.fixedDeltaTime;
+            //transform.position += Vector3.forward * movementSpeed * Time.fixedDeltaTime;
+            m_Rigidbody.velocity = Vector3.forward * movementSpeed;
             //m_Rigidbody.AddForce(Vector3.forward * movementSpeed * Time.fixedDeltaTime);
         
             if (isTouching)
