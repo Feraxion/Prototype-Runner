@@ -5,14 +5,16 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody m_Rigidbody;
+    [Header("Speed Settings")]
     [SerializeField] float movementSpeed;
     [SerializeField] float controlSpeed;
 
     //Touch settings
+    [Header("Touch Settings")]
     [SerializeField] bool isTouching;
     float touchPosX;
     Vector3 direction;
-
+    
     //Not sure about this// Getting playerstate from gamemanager
     public GameManager.PlayerState playerState;
 

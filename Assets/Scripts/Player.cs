@@ -9,6 +9,10 @@ public class Player : MonoBehaviour
     public GameObject playerMesh;
     public bool isSphere;
 
+    [Header("End Game Particle")]
+    [SerializeField] public GameObject endGameParticle;
+    [SerializeField] public GameObject nextLevelScreen;
+
     private void Start()
     {
     }
@@ -57,6 +61,18 @@ public class Player : MonoBehaviour
                 //MAYBE ADD SOME SHATTERED VERSIONS
             }            
         }
+
+        if (col.gameObject.tag == "End") // Need for particle activate.
+        {
+            foreach (Transform child in endGameParticle.transform)
+            {
+                child.GetComponent<ParticleSystem>().Play();
+            }
+        }
+        if (col.gameObject.tag == "End")
+        {
+            NextLevel();
+        }
     }
     void MakeSphere()
     {
@@ -69,5 +85,11 @@ public class Player : MonoBehaviour
         changedSphere.GetComponent<MeshRenderer>().enabled = true;
         isSphere = true;
 
+    }
+
+    void NextLevel()
+    {
+        nextLevelScreen.SetActive(true);
+        Destroy(this.gameObject);
     }
 }

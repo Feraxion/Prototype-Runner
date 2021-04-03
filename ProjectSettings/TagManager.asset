@@ -8,6 +8,7 @@ TagManager:
   - Right
   - Pixel
   - Diamond
+  - End
   layers:
   - Default
   - TransparentFX
