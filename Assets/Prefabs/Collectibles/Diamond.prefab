@@ -11,9 +11,12 @@ GameObject:
   - component: {fileID: 1239386407298642621}
   - component: {fileID: 5725077470958410612}
   - component: {fileID: 2434298002495916927}
+  - component: {fileID: 302010656768491249}
+  - component: {fileID: 3927664223501931904}
+  - component: {fileID: 1616235297382810036}
   m_Layer: 0
   m_Name: Diamond
-  m_TagString: Untagged
+  m_TagString: Diamond
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,3 +82,53 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &302010656768491249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8041024459782247380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f488e86d580254a8f9fbee4203cd10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnSpeed: 45
+--- !u!114 &3927664223501931904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8041024459782247380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82e278339df9a4b489b6f49ca539f4ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yMovement: 1
+  yMin: 1
+  yMax: 1.25
+  animSpeed: 0.2
+  moveDown: 0
+  moveUp: 0
+  xMovement: 0
+  xMin: 0
+  xMax: 0
+  xAnimSpeed: 0
+  moveRight: 0
+  moveLeft: 0
+--- !u!65 &1616235297382810036
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8041024459782247380}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.006373342, y: 0.0063733417, z: 0.009348324}
+  m_Center: {x: 0, y: 0, z: 2.328306e-10}
