@@ -55,12 +55,15 @@ public class ShopManager : MonoBehaviour
     {
         shopUI.SetActive(true);
         startScreen.SetActive(false);
+        GameManager.inst.playerState = GameManager.PlayerState.Shopping;
     }
 
     public void CloseShop()
     {
         shopUI.SetActive(false);
         startScreen.SetActive(true);
+        GameManager.inst.playerState = GameManager.PlayerState.Prepare;
+
     }
 
     public void NextButton()

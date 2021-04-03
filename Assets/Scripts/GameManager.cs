@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
         Prepare,
         Playing,
         Died,
+        Shopping,
         Finish
     }
 
