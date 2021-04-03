@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 4938407193402595524}
   - component: {fileID: 2217849695710099876}
   - component: {fileID: 3803886449697105978}
+  - component: {fileID: 521292387167638132}
   m_Layer: 0
   m_Name: PixelCollect
-  m_TagString: Untagged
+  m_TagString: Pixel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1910860673104795630, guid: caf18ea0e63571c46b5b142d0f4a4569, type: 3}
+  - {fileID: 2100000, guid: 07ab401435f90f24c8e15b3ba9834d1f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &521292387167638132
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6873762376430910179}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.007783624, y: 0.009545751, z: 0.0069410563}
+  m_Center: {x: -0.00008832966, y: -0.0004994954, z: 0.00049574336}
