@@ -33,10 +33,7 @@ public class MenuUI : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
     }
     
-    public void MainMenu()
-    {
-        GameSceneManager.Load(GameSceneManager.Scene.MainMenuS);
-    }
+   
     
     public void ExitGame()
     { 

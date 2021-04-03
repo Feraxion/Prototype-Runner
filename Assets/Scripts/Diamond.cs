@@ -16,7 +16,7 @@ public class Diamond : MonoBehaviour
         }
 
         // Add to the player's diamond 
-        GameManager.inst.IncerementDiamond();
+        GameManager.inst.IncrementDiamond();
 
         //Destroy the diamond object
         Destroy(gameObject);

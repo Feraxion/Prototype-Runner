@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     public GameObject changedSphere; // after finishLine our character will be sphere
     public GameObject playerMesh;
     public bool isSphere;
+    public float sphereFinishSize;
+    public float sphereScaleDownSpeed;
 
     [Header("End Game Particle")]
     [SerializeField] public GameObject endGameParticle;
@@ -20,10 +22,22 @@ public class Player : MonoBehaviour
     {
 
         
-        //Rotates the sphere 
+        
         if (isSphere)
         {
+            //Rotates to give feeling
             changedSphere.transform.Rotate(4,0,0);
+            
+            //If its smaller than desired size
+            if (gameObject.transform.localScale.x <= sphereFinishSize)
+            {
+                GameManager.inst.playerState = GameManager.PlayerState.Finish;
+            }
+            else 
+            {
+                //Else it keeps shrinking
+                gameObject.transform.localScale -= Vector3.one * sphereScaleDownSpeed;
+            }
         }
 
     }
@@ -35,6 +49,23 @@ public class Player : MonoBehaviour
             MakeSphere();
             Debug.Log("Character changed");
             //GameManager.inst.playerState = GameManager.PlayerState.Finish;
+        }
+
+        if (col.gameObject.tag == "2xZone")
+        {
+            GameManager.inst.bonusMultiplier = 2;
+        }
+        
+        
+        if (col.gameObject.tag == "3xZone")
+        {
+            GameManager.inst.bonusMultiplier = 3;
+        }
+        
+        
+        if (col.gameObject.tag == "4xZone")
+        {
+            GameManager.inst.bonusMultiplier = 4;
         }
         
         // when player gets pixels our character will scale

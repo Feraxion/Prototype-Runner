@@ -8,6 +8,10 @@ public class GameManager : MonoBehaviour
 {
     [Header("Diamond Stats")]
     [SerializeField] public int diamondCount;
+    [SerializeField] public int currentLevelDiamondCount;
+    [SerializeField] public int bonusMultiplier;
+
+
     [SerializeField] public TextMeshProUGUI diamondText;
     public GameObject StartScreen;
     public GameObject FinishScreen;
@@ -44,19 +48,34 @@ public class GameManager : MonoBehaviour
 
         if (playerState == PlayerState.Finish)
         {
-            //Oyun bitisini cagiriyor
-            StartCoroutine(WaitAfterSeconds(3, FinishScreen));
+            
+                //Calculates diamond amount to give player
+                currentLevelDiamondCount *= bonusMultiplier;
+                diamondCount += currentLevelDiamondCount;
+            
+                //Defaults them for next level
+                currentLevelDiamondCount = 0;
+                bonusMultiplier = 1;
+                
+                //Updates the text
+                diamondText.text = ""  + diamondCount ;
+
+            
+            
+            FinishScreen.SetActive(true);
         }
 
         if (playerState == PlayerState.Died)
         {
             GameOverScreen.SetActive(true);
+            currentLevelDiamondCount = 0;
         }
     }
-    public void IncerementDiamond()
+    public void IncrementDiamond()
     {
-        diamondCount++;
-        diamondText.text = "" + diamondCount;
+        //Keeps it in temporary variable in case player dies before finishing
+        currentLevelDiamondCount++;
+        diamondText.text = "" + (currentLevelDiamondCount + diamondCount) ;
     }
     
     IEnumerator WaitAfterSeconds(int seconds, GameObject obj)

@@ -9,6 +9,9 @@ TagManager:
   - Pixel
   - Diamond
   - End
+  - 2xZone
+  - 3xZone
+  - 4xZone
   layers:
   - Default
   - TransparentFX

@@ -5,12 +5,25 @@ using UnityEngine.UI;
 
 public class ButtonMovement : MonoBehaviour
 {
+    [Header("Y Axis Movement")] 
+    public bool yMovement;
+    
     public float yMin ;
     public float yMax ;
     public float animSpeed;
 
     public bool moveDown;
     public bool moveUp;
+
+    [Header("X Axis Movement")]
+    public bool xMovement;
+    
+    public float xMin;
+    public float xMax;
+    public float xAnimSpeed;
+    
+    public bool moveRight;
+    public bool moveLeft;
     
     Vector3 movement;
     
@@ -23,26 +36,51 @@ public class ButtonMovement : MonoBehaviour
     void Update()
     {
         movement = gameObject.transform.position;
-        
-        
-        if(movement.y >= yMax){
-            moveDown = true;
-            moveUp= false;
+
+        if (yMovement)
+        {
+            if(movement.y >= yMax){
+                moveDown = true;
+                moveUp= false;
+            }
+
+            if(movement.y <= yMin){
+                moveUp = true;
+                moveDown=false;
+            }
+
+            if (moveUp)
+            {
+                movement.y += animSpeed * Time.deltaTime;
+            }
+            else
+            {
+                movement.y -= animSpeed * Time.deltaTime;
+            }
         }
 
-        if(movement.y <= yMin){
-            moveUp = true;
-            moveDown=false;
-        }
+        if (xMovement)
+        {
+            if(movement.x >= xMax){
+                moveRight = false;
+                moveLeft = true;
+            }
 
-        if (moveUp)
-        {
-            movement.y += animSpeed * Time.deltaTime;
+            if(movement.x <= xMin){
+                moveRight = true;
+                moveLeft = false;
+            }
+
+            if (moveRight)
+            {
+                movement.x += xAnimSpeed * Time.deltaTime;
+            }
+            else
+            {
+                movement.x -= xAnimSpeed * Time.deltaTime;
+            }
         }
-        else
-        {
-            movement.y -= animSpeed * Time.deltaTime;
-        }
+        
 
         gameObject.transform.position = movement;
     }
