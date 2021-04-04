@@ -82,7 +82,22 @@ public class Player : MonoBehaviour
         if (col.gameObject.tag == "Obstacle")
         {
 
-            if (col.transform.localScale.x > gameObject.transform.localScale.x)
+
+            if (col.gameObject.GetComponent<ObstacleValue>().ObstacleScale > gameObject.transform.localScale.x)
+            {
+                Destroy(gameObject);
+                GameManager.inst.playerState = GameManager.PlayerState.Died;
+            }
+            else
+            {
+                gameObject.transform.localScale /= col.gameObject.GetComponent<ObstacleValue>().ObstacleDamage;
+                Destroy(col.gameObject);
+            }
+
+            
+                
+            
+            /*if (col.transform.localScale.x > gameObject.transform.localScale.x)
             {
                 Destroy(gameObject);
                 GameManager.inst.playerState = GameManager.PlayerState.Died;
@@ -94,7 +109,7 @@ public class Player : MonoBehaviour
                 gameObject.transform.localScale /= 1.5f;
                 Destroy(col.gameObject);
                 //MAYBE ADD SOME SHATTERED VERSIONS
-            }            
+            }    */        
         }
     }
     void MakeSphere()

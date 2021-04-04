@@ -105,6 +105,12 @@ MonoBehaviour:
   xAnimSpeed: 0
   moveRight: 0
   moveLeft: 0
+  zMovement: 0
+  zMin: 0
+  zMax: 0
+  zAnimSpeed: 0
+  moveForward: 0
+  moveBackward: 0
 --- !u!65 &9090040099053709012
 BoxCollider:
   m_ObjectHideFlags: 0

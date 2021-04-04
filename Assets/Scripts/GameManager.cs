@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            diamondCount = 3131;
+            diamondCount = 0;
             
         }
 
@@ -65,7 +65,8 @@ public class GameManager : MonoBehaviour
 
         if (playerState == PlayerState.Finish)
         {
-            bonusMultiplier = 1;
+                //bonusMultiplier = 1;
+                
                 //Calculates diamond amount to give player
                 currentLevelDiamondCount *= bonusMultiplier;
                 diamondCount += currentLevelDiamondCount;
