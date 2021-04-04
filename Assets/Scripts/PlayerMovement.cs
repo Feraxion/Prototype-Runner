@@ -63,10 +63,22 @@ public class PlayerMovement : MonoBehaviour
         }
         
     }
-
+    //Testing Inputs
     void GetInput()
     {
         if (Input.GetMouseButton(0))
+        {
+            isTouching = true;
+        }
+        else
+        {
+            isTouching = false;
+        }
+    }
+    //Mobile Inputs
+    void GetInputMobile()
+    {
+        if (Input.touchCount > 0)
         {
             isTouching = true;
         }
