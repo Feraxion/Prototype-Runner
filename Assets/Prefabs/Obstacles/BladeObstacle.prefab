@@ -231,5 +231,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f37b25c7a22f6bb41aed39bfc1f20faf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObstacleScale: 0.7
+  ObstacleScale: 0.6
   ObstacleDamage: 1.2
