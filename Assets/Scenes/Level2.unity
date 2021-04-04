@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.091107376, g: 0.45505092, b: 1.2488288, a: 1}
+  m_IndirectSpecularColor: {r: 0.09114243, g: 0.45515338, b: 1.2500404, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2014,8 +2014,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.77, y: -4.39, z: 275.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1132347203}
+  m_Children: []
   m_Father: {fileID: 1732935272}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3498,7 +3497,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 210926822}
+    m_TransformParent: {fileID: 1107233988}
     m_Modifications:
     - target: {fileID: 1580731696092366025, guid: c6081af3e49d04243960e3e1cf776ae9,
         type: 3}
@@ -3508,7 +3507,7 @@ PrefabInstance:
     - target: {fileID: 1580731696092366030, guid: c6081af3e49d04243960e3e1cf776ae9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1580731696092366030, guid: c6081af3e49d04243960e3e1cf776ae9,
         type: 3}
@@ -4899,6 +4898,7 @@ Transform:
   - {fileID: 5952909}
   - {fileID: 2130495942}
   - {fileID: 1179327789}
+  - {fileID: 913246371}
   - {fileID: 1650026082}
   - {fileID: 706958841}
   - {fileID: 1381299923}
@@ -4906,18 +4906,17 @@ Transform:
   - {fileID: 1509002992}
   - {fileID: 1754821365}
   - {fileID: 1544576346}
+  - {fileID: 1326877179}
   - {fileID: 1419746025}
   - {fileID: 130978114}
-  - {fileID: 913246371}
-  - {fileID: 1250597592}
-  - {fileID: 1326877179}
-  - {fileID: 1298955188}
   - {fileID: 1378054213}
-  - {fileID: 1901468345}
-  - {fileID: 1242959510}
-  - {fileID: 1895676755}
-  - {fileID: 1054217427}
+  - {fileID: 1250597592}
+  - {fileID: 1298955188}
   - {fileID: 1543232470}
+  - {fileID: 1242959510}
+  - {fileID: 1901468345}
+  - {fileID: 1054217427}
+  - {fileID: 1895676755}
   - {fileID: 785548690}
   - {fileID: 1728904675}
   - {fileID: 1127962095}
@@ -8786,7 +8785,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 27cad906dafce8f418877f0ac00a81e4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -264.25
+      value: -265.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 27cad906dafce8f418877f0ac00a81e4,
         type: 3}
@@ -9684,7 +9683,7 @@ MonoBehaviour:
   playerMesh: {fileID: 1952890801}
   isSphere: 0
   sphereFinishSize: 0
-  sphereScaleDownSpeed: 0
+  sphereScaleDownSpeed: 0.01
   endGameParticle: {fileID: 1132347202}
   nextLevelScreen: {fileID: 527219045}
 --- !u!54 &1107233993
@@ -10092,12 +10091,6 @@ Transform:
 --- !u!1 &1132347202 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1580731696092366025, guid: c6081af3e49d04243960e3e1cf776ae9,
-    type: 3}
-  m_PrefabInstance: {fileID: 396632627}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1132347203 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1580731696092366030, guid: c6081af3e49d04243960e3e1cf776ae9,
     type: 3}
   m_PrefabInstance: {fileID: 396632627}
   m_PrefabAsset: {fileID: 0}

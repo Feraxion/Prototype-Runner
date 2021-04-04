@@ -96,18 +96,6 @@ public class Player : MonoBehaviour
                 //MAYBE ADD SOME SHATTERED VERSIONS
             }            
         }
-
-        if (col.gameObject.tag == "End") // Need for particle activate.
-        {
-            foreach (Transform child in endGameParticle.transform)
-            {
-                child.GetComponent<ParticleSystem>().Play();
-            }
-        }
-        if (col.gameObject.tag == "End")
-        {
-            NextLevel();
-        }
     }
     void MakeSphere()
     {
