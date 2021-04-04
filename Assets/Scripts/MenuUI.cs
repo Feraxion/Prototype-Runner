@@ -26,6 +26,8 @@ public class MenuUI : MonoBehaviour
     public void NextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //currentLevelDiamondCount = 0;
+        GameManager.inst.currentLevelDiamondCount = 0;
     }
 
     public void RestartGame()

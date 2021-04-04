@@ -15,7 +15,7 @@ public class ShopManager : MonoBehaviour
     
     
     public static ShopManager inst;
-    public GameObject startScreen;
+    
 
     void Awake()
     {
@@ -54,14 +54,14 @@ public class ShopManager : MonoBehaviour
     public void OpenShop()
     {
         shopUI.SetActive(true);
-        startScreen.SetActive(false);
+        GameManager.inst.StartScreen.SetActive(false);
         GameManager.inst.playerState = GameManager.PlayerState.Shopping;
     }
 
     public void CloseShop()
     {
         shopUI.SetActive(false);
-        startScreen.SetActive(true);
+        GameManager.inst.StartScreen.SetActive(true);
         GameManager.inst.playerState = GameManager.PlayerState.Prepare;
 
     }

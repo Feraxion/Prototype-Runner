@@ -82,7 +82,7 @@ public class Player : MonoBehaviour
         if (col.gameObject.tag == "Obstacle")
         {
 
-
+            
             if (col.gameObject.GetComponent<ObstacleValue>().ObstacleScale > gameObject.transform.localScale.x)
             {
                 Destroy(gameObject);

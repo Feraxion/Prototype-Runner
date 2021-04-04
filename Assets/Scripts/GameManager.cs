@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public int diamondCount;
     [SerializeField] public int currentLevelDiamondCount;
     [SerializeField] public int bonusMultiplier;
+    private bool isScoreCalculated;
 
 
     [SerializeField] public TextMeshProUGUI diamondText;
@@ -52,6 +53,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        isScoreCalculated = false;
     }
 
     void Update()
@@ -65,21 +67,25 @@ public class GameManager : MonoBehaviour
 
         if (playerState == PlayerState.Finish)
         {
-                //bonusMultiplier = 1;
-                
+
+            if (!isScoreCalculated)
+            {
                 //Calculates diamond amount to give player
-                currentLevelDiamondCount *= bonusMultiplier;
-                diamondCount += currentLevelDiamondCount;
+                
+                diamondCount += (currentLevelDiamondCount * bonusMultiplier);
             
                 //Defaults them for next level
-                currentLevelDiamondCount = 0;
+                //currentLevelDiamondCount = 0;
                 bonusMultiplier = 1;
                     
                 //Updates the text
                 diamondText.text = ""  + diamondCount ;
+                isScoreCalculated = true;
             
             
-            PlayerPrefs.SetInt("diaAmount",diamondCount);
+                PlayerPrefs.SetInt("diaAmount",diamondCount);
+            }
+               
 
             FinishScreen.SetActive(true);
         }
@@ -95,6 +101,19 @@ public class GameManager : MonoBehaviour
         //Keeps it in temporary variable in case player dies before finishing
         currentLevelDiamondCount++;
         diamondText.text = "" + (currentLevelDiamondCount + diamondCount) ;
+    }
+
+    public void BonusAdWatched()
+    {
+        currentLevelDiamondCount *= 2;
+        diamondCount += (currentLevelDiamondCount);
+            
+        //Defaults them for next level
+        //currentLevelDiamondCount = 0;
+        bonusMultiplier = 1;
+                    
+        //Updates the text
+        diamondText.text = ""  + diamondCount ;
     }
     
     IEnumerator WaitAfterSeconds(int seconds, GameObject obj)
