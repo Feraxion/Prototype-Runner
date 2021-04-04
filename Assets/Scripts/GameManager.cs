@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -35,8 +36,22 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        if (PlayerPrefs.HasKey("diaAmount"))
+        {
+            diamondCount = PlayerPrefs.GetInt("diaAmount");
+        }
+        else
+        {
+            diamondCount = 3131;
+            
+        }
+
         inst = this;
         playerState = PlayerState.Prepare;
+    }
+
+    private void Start()
+    {
     }
 
     void Update()
@@ -44,11 +59,13 @@ public class GameManager : MonoBehaviour
         if (playerState == PlayerState.Prepare)
         {
             StartScreen.SetActive(true);
+            diamondText.text = "" + (currentLevelDiamondCount + diamondCount) ;
+
         }
 
         if (playerState == PlayerState.Finish)
         {
-            
+            bonusMultiplier = 1;
                 //Calculates diamond amount to give player
                 currentLevelDiamondCount *= bonusMultiplier;
                 diamondCount += currentLevelDiamondCount;
@@ -56,12 +73,13 @@ public class GameManager : MonoBehaviour
                 //Defaults them for next level
                 currentLevelDiamondCount = 0;
                 bonusMultiplier = 1;
-                
+                    
                 //Updates the text
                 diamondText.text = ""  + diamondCount ;
+            
+            
+            PlayerPrefs.SetInt("diaAmount",diamondCount);
 
-            
-            
             FinishScreen.SetActive(true);
         }
 

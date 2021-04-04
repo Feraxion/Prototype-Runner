@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonMovement : MonoBehaviour
+public class ObjectMovement : MonoBehaviour
 {
     [Header("Y Axis Movement")] 
     public bool yMovement;
@@ -25,7 +25,19 @@ public class ButtonMovement : MonoBehaviour
     public bool moveRight;
     public bool moveLeft;
     
-    Vector3 movement;
+    [Header("Z Axis Movement")]
+    public bool zMovement;
+        
+    public float zMin;
+    public float zMax;
+    public float zAnimSpeed;
+        
+    public bool moveForward;
+    public bool moveBackward;
+    
+
+
+    private Vector3 movement;
     
     void Start()
     {
@@ -81,6 +93,30 @@ public class ButtonMovement : MonoBehaviour
             }
         }
         
+        if (zMovement)
+        {
+            if(movement.z >= zMax){
+                moveForward = false;
+                moveBackward = true;
+            }
+
+            if(movement.z <= zMin){
+                moveForward = true;
+                moveBackward = false;
+            }
+
+            if (moveForward)
+            {
+                movement.z += zAnimSpeed * Time.deltaTime;
+            }
+            else
+            {
+                movement.z -= zAnimSpeed * Time.deltaTime;
+            }
+        }
+        
+        
+
 
         gameObject.transform.position = movement;
     }
