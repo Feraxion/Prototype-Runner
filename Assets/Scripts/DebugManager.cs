@@ -18,7 +18,12 @@ public class DebugManager : MonoBehaviour
     public TextMeshProUGUI cameraXPos;
     public TextMeshProUGUI cameraYPos;
     public TextMeshProUGUI cameraZPos;
+    public TextMeshProUGUI cameraXRotation;
     
+    public TextMeshProUGUI obstacleAnimSpeed;
+    public TextMeshProUGUI obstacleDamage;
+
+
     public TextMeshProUGUI cameraFOV;
 
 
@@ -46,8 +51,10 @@ public class DebugManager : MonoBehaviour
         cameraXPos.text = cameraFollow.offsetX.ToString();
         cameraYPos.text = cameraFollow.offsetY.ToString();
         cameraZPos.text = cameraFollow.offsetZ.ToString();
+        cameraXRotation.text = cameraFollow.cameraXrotation.ToString();
         cameraFOV.text = cameraFollow.cameraFov.ToString();
 
+        
 
     }
 
@@ -131,6 +138,17 @@ public class DebugManager : MonoBehaviour
     public void DecreaseCameraZPos()
     {
         cameraFollow.offsetZ -= 0.5f;
+    }
+
+    public void IncreaseCameraXRotation()
+    {
+        cameraFollow.cameraXrotation += 2f;
+    }
+
+    public void DecreaseCameraXRotation()
+    {
+        cameraFollow.cameraXrotation -= 2f;
+
     }
     
     public void IncreaseCameraFOV()

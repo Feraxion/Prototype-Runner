@@ -33,6 +33,9 @@ public class CameraFollow : MonoBehaviour
 
 
             Camera.main.fieldOfView = cameraFov;
+            
+            transform.localEulerAngles = new Vector3(cameraXrotation,gameObject.transform.eulerAngles.y,gameObject.transform.eulerAngles.z);
+            
 
             camPos.x += offsetX;
             camPos.y += offsetY;
