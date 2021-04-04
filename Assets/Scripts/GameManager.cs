@@ -105,15 +105,22 @@ public class GameManager : MonoBehaviour
 
     public void BonusAdWatched()
     {
-        currentLevelDiamondCount *= 2;
-        diamondCount += (currentLevelDiamondCount);
+        if (playerState == PlayerState.Finish)
+        {
             
-        //Defaults them for next level
-        //currentLevelDiamondCount = 0;
-        bonusMultiplier = 1;
+            //Adds the 3x video watched bonus
+            diamondCount += (currentLevelDiamondCount * 3);
+            
+            //Defaults them for next level
                     
-        //Updates the text
-        diamondText.text = ""  + diamondCount ;
+            //Updates the text
+            diamondText.text = ""  + diamondCount ;
+            currentLevelDiamondCount = 0;
+        
+            PlayerPrefs.SetInt("diaAmount",diamondCount);
+        }
+        
+
     }
     
     IEnumerator WaitAfterSeconds(int seconds, GameObject obj)

@@ -6,8 +6,9 @@ public class PlayerMovement : MonoBehaviour
 {
     Rigidbody m_Rigidbody;
     [Header("Speed Settings")]
-    [SerializeField] float movementSpeed;
-    [SerializeField] float controlSpeed;
+    public float movementSpeed;
+    public float controlSpeed;
+    
 
     //Touch settings
     [Header("Touch Settings")]

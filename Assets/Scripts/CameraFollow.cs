@@ -6,10 +6,14 @@ public class CameraFollow : MonoBehaviour
 {
     [SerializeField]private Transform playerTransform;
 
-    [SerializeField]private float offsetX;
-    [SerializeField]private float offsetY;
+    public float offsetX;
+    public float offsetY;
 
-    [SerializeField]private float offsetZ;
+    public float offsetZ;
+
+    public float cameraXrotation;
+
+    public float cameraFov;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +32,7 @@ public class CameraFollow : MonoBehaviour
             camPos.z = playerTransform.position.z;
 
 
+            Camera.main.fieldOfView = cameraFov;
 
             camPos.x += offsetX;
             camPos.y += offsetY;

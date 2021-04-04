@@ -20,14 +20,15 @@ public class MenuUI : MonoBehaviour
 
     public void SkipLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void NextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         //currentLevelDiamondCount = 0;
         GameManager.inst.currentLevelDiamondCount = 0;
+        GameManager.inst.bonusMultiplier = 1;
     }
 
     public void RestartGame()

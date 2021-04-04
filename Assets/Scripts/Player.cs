@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     public GameObject changedSphere; // after finishLine our character will be sphere
     public GameObject playerMesh;
     public bool isSphere;
+    public float diamondPickUpScaleRate;
+    
     public float sphereFinishSize;
     public float sphereScaleDownSpeed;
 
@@ -75,7 +77,7 @@ public class Player : MonoBehaviour
         // when player gets pixels our character will scale
         if(col.gameObject.tag == "Pixel")
         {
-            gameObject.transform.localScale += Vector3.one * 0.2f;
+            gameObject.transform.localScale += Vector3.one * diamondPickUpScaleRate;
             Destroy(col.gameObject);
         }
         

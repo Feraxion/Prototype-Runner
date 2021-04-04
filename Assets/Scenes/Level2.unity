@@ -1526,12 +1526,12 @@ MonoBehaviour:
   OnAdOpeningEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 178220692}
-        m_MethodName: 
+      - m_Target: {fileID: 178220693}
+        m_MethodName: BonusAdWatched
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -9772,6 +9772,7 @@ MonoBehaviour:
   movementSpeed: 8
   controlSpeed: 10
   isTouching: 0
+  animator: {fileID: 0}
   playerState: 0
 --- !u!114 &1107233992
 MonoBehaviour:
