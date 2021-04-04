@@ -32,6 +32,10 @@ public class Player : MonoBehaviour
             if (gameObject.transform.localScale.x <= sphereFinishSize)
             {
                 GameManager.inst.playerState = GameManager.PlayerState.Finish;
+                foreach (Transform child in endGameParticle.transform)
+                {
+                    child.GetComponent<ParticleSystem>().Play();
+                }
             }
             else 
             {
