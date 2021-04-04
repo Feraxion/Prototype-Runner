@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1073803268958011054}
   - component: {fileID: 2219793874310690703}
   - component: {fileID: 2501652299840522150}
+  - component: {fileID: 3691913894144992136}
   m_Layer: 0
   m_Name: CannonBall
   m_TagString: Obstacle
@@ -94,3 +95,17 @@ CapsuleCollider:
   m_Height: 0.005183501
   m_Direction: 1
   m_Center: {x: 0, y: -0.000000002677552, z: 0.0000000064028414}
+--- !u!114 &3691913894144992136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2217292677563344298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37b25c7a22f6bb41aed39bfc1f20faf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObstacleScale: 0.7
+  ObstacleDamage: 1.25

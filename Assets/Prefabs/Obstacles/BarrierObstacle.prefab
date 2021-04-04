@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8719112921338235264}
   - component: {fileID: 4745126569704887228}
   - component: {fileID: 6231032166493707678}
+  - component: {fileID: 6131922697301190180}
   m_Layer: 0
   m_Name: BarrierObstacle
   m_TagString: Obstacle
@@ -93,3 +94,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.006, y: 0.027, z: 0.006}
   m_Center: {x: 0, y: 0, z: -0.0008993048}
+--- !u!114 &6131922697301190180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2179456706669293860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37b25c7a22f6bb41aed39bfc1f20faf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObstacleScale: 0.6
+  ObstacleDamage: 1.2

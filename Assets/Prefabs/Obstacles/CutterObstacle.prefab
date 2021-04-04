@@ -60,6 +60,7 @@ GameObject:
   - component: {fileID: 3354140036480715838}
   - component: {fileID: 4791479716974294888}
   - component: {fileID: 8320181176328185512}
+  - component: {fileID: 6235244132688723466}
   m_Layer: 0
   m_Name: Cutter
   m_TagString: Obstacle
@@ -152,6 +153,12 @@ MonoBehaviour:
   xAnimSpeed: 0
   moveRight: 0
   moveLeft: 0
+  zMovement: 0
+  zMin: 0
+  zMax: 0
+  zAnimSpeed: 0
+  moveForward: 0
+  moveBackward: 0
 --- !u!65 &8320181176328185512
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -165,6 +172,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.027711606, y: 0.0007907314, z: 0.018}
   m_Center: {x: 0, y: -2.3282508e-10, z: 0.012359356}
+--- !u!114 &6235244132688723466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4791479716974294895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37b25c7a22f6bb41aed39bfc1f20faf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObstacleScale: 0.6
+  ObstacleDamage: 1.3
 --- !u!1 &7811666630900736695
 GameObject:
   m_ObjectHideFlags: 0

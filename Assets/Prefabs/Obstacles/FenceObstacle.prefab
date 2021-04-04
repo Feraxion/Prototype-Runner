@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4129914895743221872}
   - component: {fileID: 2903337088488030458}
   - component: {fileID: 5414765154607342054}
+  - component: {fileID: 2169990629201287306}
   m_Layer: 0
   m_Name: FenceObstacle
   m_TagString: Obstacle
@@ -93,3 +94,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.037376188, y: 0.0024114763, z: 0.006863851}
   m_Center: {x: 0, y: 5.820765e-11, z: -0.000618016}
+--- !u!114 &2169990629201287306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806224951490490788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37b25c7a22f6bb41aed39bfc1f20faf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObstacleScale: 0.6
+  ObstacleDamage: 1.2

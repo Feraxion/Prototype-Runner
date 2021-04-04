@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5505307633937837783}
   - component: {fileID: 3111646243313976672}
   - component: {fileID: 4473654647186361997}
+  - component: {fileID: 2969183190714049866}
   m_Layer: 0
   m_Name: TriangleObstacle
   m_TagString: Obstacle
@@ -94,3 +95,17 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6653505227755649167, guid: 3c05f2236b304c545bbbaa8191b5cc41, type: 3}
+--- !u!114 &2969183190714049866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767594489524003396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37b25c7a22f6bb41aed39bfc1f20faf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObstacleScale: 0.6
+  ObstacleDamage: 1.1
