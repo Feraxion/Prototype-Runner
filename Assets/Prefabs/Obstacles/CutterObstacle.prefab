@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4622366087138165006}
+  - component: {fileID: 1613710732249532591}
   m_Layer: 0
   m_Name: CutterObstacle
   m_TagString: Untagged
@@ -32,6 +33,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &1613710732249532591
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4622366087138165005}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4791479716974294895
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,9 +59,10 @@ GameObject:
   - component: {fileID: 2109612300267886393}
   - component: {fileID: 3354140036480715838}
   - component: {fileID: 4791479716974294888}
+  - component: {fileID: 8320181176328185512}
   m_Layer: 0
   m_Name: Cutter
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yMovement: 1
-  yMin: -0.25
+  yMin: -0.55
   yMax: 2.75
   animSpeed: 1.5
   moveDown: 0
@@ -136,6 +152,19 @@ MonoBehaviour:
   xAnimSpeed: 0
   moveRight: 0
   moveLeft: 0
+--- !u!65 &8320181176328185512
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4791479716974294895}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.027711606, y: 0.0007907314, z: 0.018}
+  m_Center: {x: 0, y: -2.3282508e-10, z: 0.012359356}
 --- !u!1 &7811666630900736695
 GameObject:
   m_ObjectHideFlags: 0

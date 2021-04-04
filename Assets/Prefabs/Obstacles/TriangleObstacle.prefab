@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 8355262919211938494}
   - component: {fileID: 5505307633937837783}
   - component: {fileID: 3111646243313976672}
+  - component: {fileID: 4473654647186361997}
   m_Layer: 0
   m_Name: TriangleObstacle
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &4473654647186361997
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767594489524003396}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6653505227755649167, guid: 3c05f2236b304c545bbbaa8191b5cc41, type: 3}

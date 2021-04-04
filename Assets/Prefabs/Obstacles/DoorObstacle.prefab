@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3602214554558554345}
   - component: {fileID: 2726682432882605349}
   - component: {fileID: 7964021915002044468}
+  - component: {fileID: 1493197658704457434}
+  - component: {fileID: 6767792090241949758}
   m_Layer: 0
   m_Name: Obstacle1
   m_TagString: Untagged
@@ -79,6 +81,32 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1493197658704457434
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218933516191447364}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.005, y: 0.004952748, z: 0.027494881}
+  m_Center: {x: 0.0175, y: 3.4924572e-10, z: 0.013651821}
+--- !u!65 &6767792090241949758
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218933516191447364}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.005, y: 0.004952748, z: 0.027494881}
+  m_Center: {x: -0.0175, y: 3.4924572e-10, z: 0.013651821}
 --- !u!1 &1506599341256141239
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,9 +151,10 @@ GameObject:
   - component: {fileID: 8464075584279942995}
   - component: {fileID: 9032321399747845442}
   - component: {fileID: 5987628548398751998}
+  - component: {fileID: 5355239549923160659}
   m_Layer: 0
   m_Name: Obstacle1_1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -215,3 +244,16 @@ MonoBehaviour:
   xAnimSpeed: 1
   moveRight: 0
   moveLeft: 0
+--- !u!65 &5355239549923160659
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5987628548398751985}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.007, y: 0.00031899606, z: 0.023898777}
+  m_Center: {x: 0, y: -4.440892e-16, z: -0.0000000023283069}
