@@ -105,9 +105,7 @@ public class GameManager : MonoBehaviour
 
     public void BonusAdWatched()
     {
-        if (playerState == PlayerState.Finish)
-        {
-            
+
             //Adds the 3x video watched bonus
             diamondCount += (currentLevelDiamondCount * 3);
             
@@ -118,8 +116,6 @@ public class GameManager : MonoBehaviour
             currentLevelDiamondCount = 0;
         
             PlayerPrefs.SetInt("diaAmount",diamondCount);
-        }
-        
 
     }
     

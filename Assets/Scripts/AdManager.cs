@@ -245,7 +245,7 @@ public class AdManager : MonoBehaviour
     #if UNITY_EDITOR
         string adUnitId = "unused";
     #elif UNITY_ANDROID
-            string adUnitId = "ca-app-pub-3940256099942544/5354046379";
+            string adUnitId = "ca-app-pub-4528189983462256/7948505499";
     #elif UNITY_IPHONE
             string adUnitId = "ca-app-pub-3940256099942544/6978759866";
     #else
@@ -301,6 +301,8 @@ public class AdManager : MonoBehaviour
                   statusText.text = "User Rewarded: " + reward.Amount ;
               });
             });
+            
+            RequestAndLoadRewardedInterstitialAd();
         }
         else
         {
@@ -313,7 +315,6 @@ public class AdManager : MonoBehaviour
     //Makes sure that there is new ad ready on opening a ad
     public void ReloadRequestAds()
     {
-        DestroyInterstitialAd();
 
         RequestBannerAd();
         RequestAndLoadInterstitialAd();
