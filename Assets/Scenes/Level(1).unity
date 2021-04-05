@@ -3022,7 +3022,6 @@ MonoBehaviour:
   - {fileID: 746716149}
   - {fileID: 1279346638}
   - {fileID: 1544221083}
-  hatPrefabs: {fileID: 1794753404}
   currentHat: {fileID: 0}
   shopUI: {fileID: 1976038458}
   currentHatInArray: 0
@@ -26790,7 +26789,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 1471.1364}
+  m_AnchoredPosition: {x: 0, y: 1196.7748}
   m_SizeDelta: {x: 0, y: 2633.454}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1604010299
@@ -31148,8 +31147,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1319801076}
   m_HandleRect: {fileID: 1319801075}
   m_Direction: 2
-  m_Value: -0.22925167
-  m_Size: 0
+  m_Value: -0.0000007139963
+  m_Size: 0.54554975
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -33934,6 +33933,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 332533836}
     m_Modifications:
+    - target: {fileID: 2717051881128783484, guid: 728250b528525a9428100d0f61baffce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3598925137298927402, guid: 728250b528525a9428100d0f61baffce,
         type: 3}
       propertyPath: m_Name
