@@ -12,6 +12,8 @@ public class ShopManager : MonoBehaviour
 
     public int currentHatInArray;
     public int purchaseCost;
+
+    public bool isPurchase;
     
     
     public static ShopManager inst;
@@ -27,7 +29,10 @@ public class ShopManager : MonoBehaviour
     void Start()
     {
         //Makes sure everything in sync
-        hats[0].gameObject.SetActive(true);
+        hats[0].gameObject.SetActive(false);
+        hats[1].gameObject.SetActive(false);
+        hats[2].gameObject.SetActive(false);
+        hats[3].gameObject.SetActive(false);
         currentHat = hats[0];
         currentHatInArray = 0;
     }
@@ -37,6 +42,14 @@ public class ShopManager : MonoBehaviour
     {
         //Gets current hat on screen
         currentHat = hats[currentHatInArray];
+        if (!isPurchase)
+        {
+            currentHat.SetActive(false);
+        }
+        else
+        {
+            currentHat.SetActive(true);
+        }
     }
 
 
@@ -46,9 +59,9 @@ public class ShopManager : MonoBehaviour
         if (GameManager.inst.diamondCount >= purchaseCost)
         {
             GameManager.inst.diamondCount -= purchaseCost;
+            isPurchase = true;
             Debug.Log("Purchase Success");
         }
-        
     }
 
     public void OpenShop()
