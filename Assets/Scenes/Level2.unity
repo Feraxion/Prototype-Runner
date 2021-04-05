@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.091244005, g: 0.4552212, b: 1.2500168, a: 1}
+  m_IndirectSpecularColor: {r: 0.091107376, g: 0.45505092, b: 1.2488288, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1492,6 +1492,7 @@ MonoBehaviour:
   shopUI: {fileID: 1976038458}
   currentHatInArray: 0
   purchaseCost: 0
+  isPurchase: 0
 --- !u!114 &178220696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5923,7 +5924,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 695854090}
   m_LocalRotation: {x: 0.15401648, y: -0, z: -0, w: 0.98806834}
-  m_LocalPosition: {x: 0, y: 5.43, z: -174.2}
+  m_LocalPosition: {x: 0, y: 4.67, z: -200.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5976,6 +5977,8 @@ MonoBehaviour:
   offsetX: 0
   offsetY: 4.9
   offsetZ: -10
+  cameraXrotation: 0
+  cameraFov: 0
 --- !u!4 &698469811 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4675836233841635556, guid: 831df852c2a43c24a990ba089bac7b76,
@@ -9789,6 +9792,7 @@ MonoBehaviour:
   changedSphere: {fileID: 731310751}
   playerMesh: {fileID: 1952890801}
   isSphere: 0
+  diamondPickUpScaleRate: 0
   sphereFinishSize: 0
   sphereScaleDownSpeed: 0.01
   endGameParticle: {fileID: 1132347202}
