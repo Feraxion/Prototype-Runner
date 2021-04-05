@@ -8,9 +8,12 @@ public class DebugManager : MonoBehaviour
     public PlayerMovement playerMovement;
     public Player player;
     public CameraFollow cameraFollow;
-    public ObstacleValue obsDamage;
-    public ObjectMovement obsAnimSpeed;
-    //public GameObject obstacles;
+    public GameObject easySlowObs;
+    public GameObject easyMediumObs;
+    public GameObject easyFastObs;
+    public GameObject hardSlowObs;
+    public GameObject hardMediumObs;
+    public GameObject hardFastObs;
 
 
     public TextMeshProUGUI playerMovementSpeed;
@@ -57,12 +60,6 @@ public class DebugManager : MonoBehaviour
         cameraZPos.text = cameraFollow.offsetZ.ToString();
         cameraXRotation.text = cameraFollow.cameraXrotation.ToString();
         cameraFOV.text = cameraFollow.cameraFov.ToString();
-
-        obstacleAnimSpeed.text = obsAnimSpeed.animSpeed.ToString();
-        obstacleDamage.text = obsDamage.ObstacleDamage.ToString();
-
-
-
     }
 
 
@@ -167,31 +164,59 @@ public class DebugManager : MonoBehaviour
     {
         cameraFollow.cameraFov -= 3f;
     }
-
-    public void ObsCylinderDamageIncrease()
+    public void EasySlowObstacle()
     {
-        obsDamage.ObstacleDamage += 1f;
+        easySlowObs.SetActive(true);
+        easyMediumObs.SetActive(false);
+        easyFastObs.SetActive(false);
+        hardSlowObs.SetActive(false);
+        hardMediumObs.SetActive(false);
+        hardFastObs.SetActive(false);
     }
-
-    public void ObsCylinderDamageDecrease()
+    public void EasyMediumObstacle()
     {
-        obsDamage.ObstacleDamage -= 1f;
+        easySlowObs.SetActive(false);
+        easyMediumObs.SetActive(true);
+        easyFastObs.SetActive(false);
+        hardSlowObs.SetActive(false);
+        hardMediumObs.SetActive(false);
+        hardFastObs.SetActive(false);
     }
-
-    public void ObsCylinderSpeedIncrease()
+    public void EasyFastObstacle()
     {
-        obsAnimSpeed.animSpeed += 3f;
-
-        //foreach (Transform item in obstacles.transform)
-        //{
-        //    item.GetComponent<ObjectMovement>().animSpeed += 3f;
-        //    Debug.Log("its working");
-        //}
+        easySlowObs.SetActive(false);
+        easyMediumObs.SetActive(false);
+        easyFastObs.SetActive(true);
+        hardSlowObs.SetActive(false);
+        hardMediumObs.SetActive(false);
+        hardFastObs.SetActive(false);
     }
-
-    public void ObsCylinderSpeedDecrease()
+    public void HardSlowObstacle()
     {
-        obsAnimSpeed.animSpeed -= 3f;
+        easySlowObs.SetActive(false);
+        easyMediumObs.SetActive(false);
+        easyFastObs.SetActive(false);
+        hardSlowObs.SetActive(true);
+        hardMediumObs.SetActive(false);
+        hardFastObs.SetActive(false);
+    }
+    public void HardMediumObstacle()
+    {
+        easySlowObs.SetActive(false);
+        easyMediumObs.SetActive(false);
+        easyFastObs.SetActive(false);
+        hardSlowObs.SetActive(false);
+        hardMediumObs.SetActive(true);
+        hardFastObs.SetActive(false);
+    }
+    public void HardFastObstacle()
+    {
+        easySlowObs.SetActive(false);
+        easyMediumObs.SetActive(false);
+        easyFastObs.SetActive(false);
+        hardSlowObs.SetActive(false);
+        hardMediumObs.SetActive(false);
+        hardFastObs.SetActive(true);
     }
 
     public void OpenDebugSettings()
