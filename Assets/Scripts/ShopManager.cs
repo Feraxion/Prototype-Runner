@@ -8,12 +8,14 @@ public class ShopManager : MonoBehaviour
 
     public GameObject[] hats;
     public GameObject currentHat;
+    public GameObject purchaseHat;
     public GameObject shopUI;
 
     public int currentHatInArray;
     public int purchaseCost;
 
     public bool isPurchase;
+    public bool hasHat;
     
     
     public static ShopManager inst;
@@ -30,9 +32,6 @@ public class ShopManager : MonoBehaviour
     {
         //Makes sure everything in sync
         hats[0].gameObject.SetActive(false);
-        hats[1].gameObject.SetActive(false);
-        hats[2].gameObject.SetActive(false);
-        hats[3].gameObject.SetActive(false);
         currentHat = hats[0];
         currentHatInArray = 0;
     }
@@ -42,13 +41,9 @@ public class ShopManager : MonoBehaviour
     {
         //Gets current hat on screen
         currentHat = hats[currentHatInArray];
-        if (!isPurchase)
+        if (isPurchase == true)
         {
-            currentHat.SetActive(false);
-        }
-        else
-        {
-            currentHat.SetActive(true);
+            purchaseHat.SetActive(true);
         }
     }
 
@@ -60,6 +55,8 @@ public class ShopManager : MonoBehaviour
         {
             GameManager.inst.diamondCount -= purchaseCost;
             isPurchase = true;
+            purchaseHat = currentHat;
+            RemoveAt(ref hats, currentHatInArray);
             Debug.Log("Purchase Success");
         }
     }
@@ -92,7 +89,7 @@ public class ShopManager : MonoBehaviour
             currentHatInArray++;
 
         }
-        hats[currentHatInArray].gameObject.SetActive(true);
+        hats[currentHatInArray].gameObject.SetActive(false);
     }
     
     public void PreviousButton()
@@ -107,6 +104,14 @@ public class ShopManager : MonoBehaviour
             currentHatInArray--;
 
         }
-        hats[currentHatInArray].gameObject.SetActive(true);
+        hats[currentHatInArray].gameObject.SetActive(false);
+    }
+
+    public static void RemoveAt<T>(ref T[] arr, int index)
+    {
+        // replace the element at index with the last element
+        arr[index] = arr[arr.Length - 1];
+        // finally, let's decrement Array's size by one
+        Array.Resize(ref arr, arr.Length - 1);
     }
 }
